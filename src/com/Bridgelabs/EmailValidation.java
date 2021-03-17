@@ -32,9 +32,23 @@ public class EmailValidation {
             System.out.println("Given Name id is not valid");
         }
     }
+    public static void emailAddress() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your email name: ");
+        String email = sc.next();
+        String regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]*$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        if (matcher.matches()) {
+            System.out.println("Given Email id is valid");
+        } else {
+            System.out.println("Given Email id is not valid");
+        }
+    }
     public static void main(String[] args) {
         firstName();
         lastName();
+        emailAddress();
     }
 }
 
