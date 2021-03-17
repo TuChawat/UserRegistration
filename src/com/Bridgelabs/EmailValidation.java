@@ -45,11 +45,24 @@ public class EmailValidation {
             System.out.println("Given Email id is not valid");
         }
     }
+    public static void phoneNumber() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your Phone No. name: ");
+        String phone = sc.next();
+        String regex = "^[0-9]{2}+[0-9]{10}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(phone);
+        if (matcher.matches()) {
+            System.out.println("Given Phone No. is valid");
+        } else {
+            System.out.println("Given Phone No. is not valid");
+        }
+    }
     public static void main(String[] args) {
         firstName();
         lastName();
         emailAddress();
+        phoneNumber();
     }
 }
-
 
