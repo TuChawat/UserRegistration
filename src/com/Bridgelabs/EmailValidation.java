@@ -58,11 +58,25 @@ public class EmailValidation {
             System.out.println("Given Phone No. is not valid");
         }
     }
+    public static void passwordValidation(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your Password : ");
+        String password = sc.next();
+        String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+        if (matcher.matches()) {
+            System.out.println("Given Password is valid");
+        } else {
+            System.out.println("Given Password is not valid");
+        }
+    }
     public static void main(String[] args) {
         firstName();
         lastName();
         emailAddress();
         phoneNumber();
+        passwordValidation();
     }
 }
 
